@@ -3,7 +3,8 @@ print('Hello arch')
 
 
 conn = pymssql.connect(
-    server='172.25.176.1',
+    server='localhost',
+    port=1533,
     user='test',
     password='Qazxcvfr1234',
     database='AdventureWorks2022',
