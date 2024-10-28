@@ -1,13 +1,17 @@
 import pymssql
+print('Hello arch')
 
-with pymssql.connect(server='EPPLWARW009D\\SQLEXPRESS',
-                     database='AdventureWorks2022',
-                     user='test',
-                     password='Qazxcvfr1234',
-                     as_dict=True) as conn:
-    print("Connection established successfully.")
 
-    cursor = conn.cursor()
-    cursor.execute('SELECT 1 AS test_column')
-    result = cursor.fetchone()
-    print("Query executed successfully:", result)
+conn = pymssql.connect(
+    server='host.docker.internal',
+    port=1433,
+    user='test',
+    password='Qazxcvfr1234',
+    database='AdventureWorks2022',
+    as_dict=True
+)
+cursor = conn.cursor()
+cursor.execute('SELECT TOP 10 * FROM person.person')
+records = cursor.fetchall()
+print(records)
+conn.close()
