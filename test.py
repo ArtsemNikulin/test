@@ -3,7 +3,7 @@ print('Hello arch')
 
 
 conn = pymssql.connect(
-    server='EPPLWARW009D\\SQLEXPRESS',
+    server='host.docker.internal',
     user='test',
     password='Qazxcvfr1234',
     database='AdventureWorks2022',
