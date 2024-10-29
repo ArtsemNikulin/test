@@ -16,8 +16,8 @@
 # conn.close()
 import pyodbc
 
-with pyodbc.connect(fr'DRIVER={{ODBC Driver 18 for SQL Server}};Server=host.docker.internal;Database=AdventureWorks2022;UID=test;PWD=Qazxcvfr1234',
+with pyodbc.connect(f'DRIVER={{SQL Server}};Server=host.docker.internal;Database=TRN;UID=test;PWD=Qazxcvfr1234',
                     autocommit=True) as conn:
     cursor = conn.cursor()
-    x = list(cursor.execute('SELECT TOP 10 * FROM person.person'))
+    x = list(cursor.execute('SELECT 1'))
     print(x)
