@@ -16,7 +16,7 @@
 # conn.close()
 import pyodbc
 
-with pyodbc.connect(f'DRIVER={{ODBC Driver 17 for SQL Server}};Server=host.docker.internal,1433;Database=TRN;UID=test;PWD=Qazxcvfr1234',
+with pyodbc.connect(f'DRIVER={{ODBC Driver 17 for SQL Server}};Server=host.docker.internal;Database=TRN;UID=test;PWD=Qazxcvfr1234',
                     autocommit=True) as conn:
     cursor = conn.cursor()
     x = list(cursor.execute('SELECT 1'))
