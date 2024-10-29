@@ -16,7 +16,7 @@
 # conn.close()
 import pyodbc
 
-with pyodbc.connect(f'DRIVER={{ODBC Driver 18 for SQL Server}};Server=localhost,1433;Database=TRN;Trusted_Connection=yes',
+with pyodbc.connect(f'DRIVER={{ODBC Driver 18 for SQL Server}};Server=localhost,1433;Database=TRN;UID=test;PWD=Qazxcvfr1234',
                     autocommit=True) as conn:
     cursor = conn.cursor()
     x = list(cursor.execute('SELECT 1'))
